@@ -1,2 +1,14 @@
-<% // Render your search results here %>
-<% // This is how to do comments in EJS, by the way... %>
+
+<h1>Results for <%= query %></h1>
+<% returnData.Search.forEach((movie, index) => { %>
+    <div class="movie">
+        <a href="/movies/<%= index %>">
+            <h2><%= movie.Title %> (<%= movie.Year %>)</h2>
+            <% if (movie.Poster == "N/A") { %>
+                <h4>(No poster available)</h4>
+                <% } else { %>
+                <img src="<%= movie.Poster %>" alt="movie poster">
+            <% } %>
+        </a>
+    </div>
+<% }) %>

@@ -1,2 +1,12 @@
 <% // Render individual movie details here %>
 <% // This is how to do comments in EJS, by the way... %>
+<h1>
+    Details about this movie
+</h1>
+<h2><%= movie.Title %> (<%= movie.Year %>)</h2>
+            <% if (movie.Poster == "N/A") { %>
+                <h4>(No poster available)</h4>
+                <% } else { %>
+                <img src="<%= movie.Poster %>" alt="movie poster">
+            <% } %>
+<p><%= movie.Plot %></p>
